@@ -4,11 +4,11 @@ const Navbar = () => (
       <ul>
         <li>
           {' '}
-          <a href="/books.js" className="t">Books</a>
+          <a href="/books.js" className="three">Books</a>
         </li>
         <li>
           {' '}
-          <a href="/categories.js" className="B">Categories</a>
+          <a href="/categories.js" className="two">Categories</a>
         </li>
       </ul>
     </nav>

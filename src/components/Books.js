@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Books = () => (
-  <div className="one">
+  <div className="three">
     <h1>Books</h1>
 
   </div>
