@@ -1,5 +1,5 @@
-const ADD = "bookstore-website/Books/ADD";
-const REMOVE = "bookstore-website/Books/REMOVE";
+const ADD = 'bookstore-website/Books/ADD';
+const REMOVE = 'bookstore-website/Books/REMOVE';
 
 export default (state = [], action) => {
   switch (action.type) {
