@@ -1,12 +1,12 @@
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from 'uuid';
 
-const ADD = "bookstore/books/ADD";
-const REMOVE = "bookstore/books/REMOVE";
+const ADD = 'bookstore/books/ADD';
+const REMOVE = 'bookstore/books/REMOVE';
 
 const initialState = [
-  { id: uuidv4(), title: "Angular", author: "James brown" },
-  { id: uuidv4(), title: "React", author: "Smith" },
-  { id: uuidv4(), title: "Redux", author: "Mohhamed" },
+  { id: uuidv4(), title: 'Angular', author: 'James brown' },
+  { id: uuidv4(), title: 'React', author: 'Smith' },
+  { id: uuidv4(), title: 'Redux', author: 'Mohhamed' },
 ];
 
 export default (state = initialState, action) => {

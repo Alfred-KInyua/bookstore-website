@@ -1,5 +1,5 @@
-import { useSelector, useDispatch } from "react-redux";
-import { checkStatus } from "../redux/categories/categories";
+import { useSelector, useDispatch } from 'react-redux';
+import { checkStatus } from '../redux/categories/categories';
 
 const Categories = () => {
   const data = useSelector((state) => state.categories);
