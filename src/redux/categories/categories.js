@@ -1,4 +1,4 @@
-const CHECK = 'bookstore-website/categories/CHECK';
+const CHECK = 'bookstore/categories/CHECK';
 
 export default (state = [], action) => {
   switch (action.type) {
