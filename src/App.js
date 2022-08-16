@@ -1,4 +1,4 @@
-import React from 'react-dom';
+import React from 'react';
 import {
   BrowserRouter,
   Routes,
@@ -11,15 +11,14 @@ import './App.css';
 
 export default function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="Books" element={<Books />} />
-          <Route path="Categories" element={<Categories />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Books />} />
+        <Route path="/Categories" element={<Categories />} />
+      </Routes>
+    </BrowserRouter>
+
   );
 }

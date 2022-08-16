@@ -1,9 +1,33 @@
-import React from 'react';
+import Book from './Book';
+import Forms from './Forms';
 
-const Books = () => (
-  <div className="one">
-    <h1>Books</h1>
+const Books = () => {
+  const books = [
+    {
+      id: '1',
+      title: 'Learn React',
+      author: 'Naol',
+    },
+    {
+      id: '2',
+      title: 'Java for beginers',
+      author: 'Muhe',
+    },
+    {
+      id: '3',
+      title: 'Python for dummies',
+      author: 'John Lee',
+    },
+  ];
 
-  </div>
-);
+  return (
+    <>
+      {books.map((book) => (
+        <Book key={book.title} title={book.title} author={book.author} />
+      ))}
+      <Forms />
+    </>
+  );
+};
+
 export default Books;
