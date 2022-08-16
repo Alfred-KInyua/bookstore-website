@@ -23,3 +23,5 @@ export default (state = initialState, action) => {
 export const addBook = (book) => ({ type: ADD, book });
 
 export const removeBook = (id) => ({ type: REMOVE, id });
+
+// bk reducer

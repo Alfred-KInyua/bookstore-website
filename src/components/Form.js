@@ -35,6 +35,7 @@ const Form = () => {
         placeholder="Title"
         name="title"
       />
+      <br />
       <input
         value={formValues.author}
         onChange={valueChangeHandler}
