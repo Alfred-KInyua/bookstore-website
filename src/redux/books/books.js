@@ -6,11 +6,9 @@ const ADD = 'bookstore/books/ADD';
 const REMOVE = 'bookstore/books/REMOVE';
 const FETCH = 'FETCH';
 
-const initialState = [
-  { id: uuidv4(), title: 'Angular', author: 'James brown' },
-  { id: uuidv4(), title: 'React', author: 'Smith' },
-  { id: uuidv4(), title: 'Redux', author: 'Mohhamed' },
-];
+const initialState = {
+  books: [],
+};
 
 export default (state = initialState, action) => {
   switch (action.type) {
