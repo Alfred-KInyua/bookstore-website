@@ -1,7 +1,10 @@
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import api from '../../MYAPI/api';
 import { v4 as uuidv4 } from 'uuid';
 
 const ADD = 'bookstore/books/ADD';
 const REMOVE = 'bookstore/books/REMOVE';
+const FETCH = 'FETCH';
 
 const initialState = [
   { id: uuidv4(), title: 'Angular', author: 'James brown' },
