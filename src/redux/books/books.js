@@ -1,27 +1,60 @@
-import { v4 as uuidv4 } from 'uuid';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import api from '../../MYAPI/api';
 
 const ADD = 'bookstore/books/ADD';
 const REMOVE = 'bookstore/books/REMOVE';
+const FETCH = 'FETCH';
 
-const initialState = [
-  { id: uuidv4(), title: 'Angular', author: 'James brown' },
-  { id: uuidv4(), title: 'React', author: 'Smith' },
-  { id: uuidv4(), title: 'Redux', author: 'Mohhamed' },
-];
+const initialState = {
+  books: [],
+};
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case ADD:
-      return [...state, action.book];
-    case REMOVE:
-      return state.filter((book) => book.id !== action.id);
+    case `${FETCH}/fulfilled`:
+      return { ...state, books: [...action.payload] };
+    case `${ADD}/fulfilled`:
+      return { ...state, books: [...state.books, action.payload] };
+    case `${REMOVE}/fulfilled`:
+      return {
+        ...state,
+        books: state.books.filter((book) => book.item_id !== action.payload),
+      };
     default:
       return state;
   }
 };
 
-export const addBook = (book) => ({ type: ADD, book });
+const bks = (receive) => {
+  const correctFormat = Object.keys(receive).map((items) => ({
+    item_id: items,
+    title: receive[items][0].title,
+    author: receive[items][0].author,
+    category: receive[items][0].category,
+  }));
 
-export const removeBook = (id) => ({ type: REMOVE, id });
+  return correctFormat;
+};
 
-// bk reducer
+export const getbooks = createAsyncThunk(FETCH, async () => {
+  const response = await fetch(api);
+  const input = await response.json();
+  const result = bks(input);
+
+  return result;
+});
+
+export const addBook = createAsyncThunk(ADD, async (book) => {
+  await fetch(api, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(book),
+  });
+  return book;
+});
+
+export const rem = createAsyncThunk(REMOVE, async (id) => {
+  await fetch(`${api}/${id}`, { method: 'DELETE', body: { item_id: id } });
+
+  return id;
+});
