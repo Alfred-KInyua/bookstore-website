@@ -20,6 +20,7 @@ const Form = () => {
       id: uuidv4(),
       title: formValues.title,
       author: formValues.author,
+      category: 'Documentary',
     };
     dispatch(addBook(book));
 
