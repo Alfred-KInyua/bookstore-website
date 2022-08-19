@@ -29,22 +29,32 @@ const Form = () => {
 
   return (
     <form onSubmit={addBookHandler}>
+      <h2>ADD NEW BOOK</h2>
       <input
         value={formValues.title}
         onChange={valueChangeHandler}
         type="text"
-        placeholder="Title"
+        placeholder="Book Title"
         name="title"
       />
-      <br />
+
       <input
         value={formValues.author}
         onChange={valueChangeHandler}
         type="text"
-        placeholder="Author"
+        placeholder="Book Author"
         name="author"
       />
-      <button type="submit">Add Book</button>
+      <input
+        value={formValues.author}
+        onChange={valueChangeHandler}
+        type="text"
+        placeholder="Category"
+        name="category"
+      />
+      <button type="submit" className="butt">
+        Add Book
+      </button>
     </form>
   );
 };

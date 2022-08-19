@@ -14,7 +14,7 @@ const Books = () => {
   }, []);
 
   return (
-    <>
+    <div className="books">
       {books.map((book) => (
         <Book
           key={book.item_id}
@@ -24,7 +24,7 @@ const Books = () => {
         />
       ))}
       <Form />
-    </>
+    </div>
   );
 };
 
