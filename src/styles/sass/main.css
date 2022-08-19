@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #f5f6fa;
+  padding: 2rem 4rem;
+}
+
+#root {
+  background-color: #fff;
+}
+
+.book {
+  padding: 3.2rem 2.7rem;
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  font-family: "Roboto Slab", sans-serif;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  gap: 4rem;
+}
+
+.book:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.book__category {
+  font-size: 1.4rem;
+  font-weight: 700;
+  opacity: 0.5;
+  margin-bottom: 0.4rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.book__title {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.book__author, .book__btn {
+  color: #4386bf;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.book__btn--remove {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 300;
+}
+
+.book__btn--update {
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  background: none;
+  background-color: #0290ff;
+  padding: 0.8rem 2.2rem;
+  border-radius: 3px;
+  color: #fff;
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 300;
+}
+
+.book__btn-list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2.1rem;
+  gap: 1.6rem;
+}
+
+.book__separator {
+  height: 2.4rem;
+  width: 1px;
+  background-color: #e8e8e8;
+}
+
+.book__circle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.1rem;
+}
+
+.book__percent {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.book__completed {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  opacity: 0.5;
+}
+
+.book__svg {
+  width: 7.2rem;
+  height: 7.2rem;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.book__svg--circle {
+  fill: none;
+  stroke: #e8e8e8;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.book__chapter--current {
+  text-transform: uppercase;
+  opacity: 0.5;
+  font-size: 1.4rem;
+  margin-bottom: 0.7rem;
+}
+
+.book__chapter--number {
+  font-size: 1.7rem;
+  margin-bottom: 2.3rem;
+}
+
+.form-container {
+  padding-top: 2.9rem;
+}
+
+.form-container__title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 1.9rem;
+}
+
+.form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 6fr 4fr 2fr;
+      grid-template-columns: 6fr 4fr 2fr;
+  gap: 3rem;
+}
+
+.form__control {
+  padding: 1.3rem 1.7rem;
+  font-size: 1.6rem;
+  outline: none;
+  border: 1px solid #e8e8e8;
+}
+
+.form__control::-webkit-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+  opacity: 0.5;
+}
+
+.form__control:-ms-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+  opacity: 0.5;
+}
+
+.form__control::-ms-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+  opacity: 0.5;
+}
+
+.form__control::placeholder {
+  font-family: "Montserrat", sans-serif;
+  opacity: 0.5;
+}
+
+.form__control--btn {
+  background: none;
+  border: none;
+  background-color: #0290ff;
+  border-radius: 3px;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 1.4rem;
+}
+
+.header {
+  font-family: "Montserrat", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4.7rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3rem 10rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.header__title:link, .header__title:visited {
+  text-decoration: none;
+  color: #0290ff;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.header__list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4.1rem;
+}
+
+.header__link:link, .header__link:visited {
+  color: #121212;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  letter-spacing: 1.9px;
+}
+
+.container {
+  color: #121212;
+  background-color: #fafafa;
+  padding: 3.8rem 10rem;
+  padding-bottom: 20rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.books {
+  padding-bottom: 4rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+/*# sourceMappingURL=main.css.map */
