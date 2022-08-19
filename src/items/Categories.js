@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { checkStatus } from '../redux/categories/categories';
 
 const Categories = () => {
-  const data = useSelector((state) => state.categories);
+  const msg = useSelector((state) => state.categories);
   const dispatch = useDispatch();
 
   const checkStatusHandler = () => {
@@ -14,7 +14,7 @@ const Categories = () => {
       <button onClick={checkStatusHandler} type="button">
         Check status
       </button>
-      <p>{data}</p>
+      <p>{msg}</p>
     </>
   );
 };

@@ -1,9 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import api from '../../MYAPI/api';
+
+import API_URL from '../../api/bookstoreAPI';
 
 const ADD = 'bookstore/books/ADD';
 const REMOVE = 'bookstore/books/REMOVE';
-const FETCH = 'FETCH';
+const FETCH = 'bookstore/books/FETCH';
 
 const initialState = {
   books: [],
@@ -16,36 +17,33 @@ export default (state = initialState, action) => {
     case `${ADD}/fulfilled`:
       return { ...state, books: [...state.books, action.payload] };
     case `${REMOVE}/fulfilled`:
-      return {
-        ...state,
-        books: state.books.filter((book) => book.item_id !== action.payload),
-      };
+      return { ...state, books: state.books.filter((book) => book.item_id !== action.payload) };
     default:
       return state;
   }
 };
 
-const bks = (receive) => {
-  const correctFormat = Object.keys(receive).map((items) => ({
-    item_id: items,
-    title: receive[items][0].title,
-    author: receive[items][0].author,
-    category: receive[items][0].category,
+const transformToBooks = (inputObj) => {
+  const transformed = Object.keys(inputObj).map((obj) => ({
+    item_id: obj,
+    title: inputObj[obj][0].title,
+    author: inputObj[obj][0].author,
+    category: inputObj[obj][0].category,
   }));
 
-  return correctFormat;
+  return transformed;
 };
 
-export const getbooks = createAsyncThunk(FETCH, async () => {
-  const response = await fetch(api);
-  const input = await response.json();
-  const result = bks(input);
+export const fetchBook = createAsyncThunk(FETCH, async () => {
+  const response = await fetch(API_URL);
+  const data = await response.json();
+  const transformed = transformToBooks(data);
 
-  return result;
+  return transformed;
 });
 
 export const addBook = createAsyncThunk(ADD, async (book) => {
-  await fetch(api, {
+  await fetch(API_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(book),
@@ -53,8 +51,8 @@ export const addBook = createAsyncThunk(ADD, async (book) => {
   return book;
 });
 
-export const rem = createAsyncThunk(REMOVE, async (id) => {
-  await fetch(`${api}/${id}`, { method: 'DELETE', body: { item_id: id } });
+export const removeBook = createAsyncThunk(REMOVE, async (id) => {
+  await fetch(`${API_URL}/${id}`, { method: 'DELETE', body: { item_id: id } });
 
   return id;
 });
