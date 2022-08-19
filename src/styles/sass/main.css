@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap");
+
 * {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -28,7 +29,7 @@ body {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 4rem;
 }
 
@@ -49,7 +50,8 @@ body {
   font-weight: 700;
 }
 
-.book__author, .book__btn {
+.book__author,
+.book__btn {
   color: #4386bf;
   font-size: 1.4rem;
   font-weight: 300;
@@ -82,8 +84,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-top: 2.1rem;
   gap: 1.6rem;
 }
@@ -99,11 +101,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   gap: 1.1rem;
 }
 
@@ -123,7 +125,7 @@ body {
   width: 7.2rem;
   height: 7.2rem;
   -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }
 
 .book__svg--circle {
@@ -161,7 +163,7 @@ body {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 6fr 4fr 2fr;
-      grid-template-columns: 6fr 4fr 2fr;
+  grid-template-columns: 6fr 4fr 2fr;
   gap: 3rem;
 }
 
@@ -210,13 +212,14 @@ body {
   display: flex;
   gap: 4.7rem;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 3rem 10rem;
   border-bottom: 1px solid #e8e8e8;
 }
 
-.header__title:link, .header__title:visited {
+.header__title:link,
+.header__title:visited {
   text-decoration: none;
   color: #0290ff;
   font-weight: 700;
@@ -231,7 +234,8 @@ body {
   gap: 4.1rem;
 }
 
-.header__link:link, .header__link:visited {
+.header__link:link,
+.header__link:visited {
   color: #121212;
   text-decoration: none;
   text-transform: uppercase;
@@ -251,4 +255,3 @@ body {
   padding-bottom: 4rem;
   border-bottom: 1px solid #e8e8e8;
 }
-/*# sourceMappingURL=main.css.map */
