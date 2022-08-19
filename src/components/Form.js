@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/books';
 
-const Form = () => {
+const FormAdd = () => {
   const dispatch = useDispatch();
 
   const [formValues, setFormValues] = useState({ title: '', author: '' });
@@ -17,7 +17,7 @@ const Form = () => {
     e.preventDefault();
     if (!formValues.title.trim() || !formValues.author.trim()) return;
     const book = {
-      id: uuidv4(),
+      item_id: uuidv4(),
       title: formValues.title,
       author: formValues.author,
       category: 'Documentary',
@@ -28,35 +28,31 @@ const Form = () => {
   };
 
   return (
-    <form onSubmit={addBookHandler}>
-      <h2>ADD NEW BOOK</h2>
-      <input
-        value={formValues.title}
-        onChange={valueChangeHandler}
-        type="text"
-        placeholder="Book Title"
-        name="title"
-      />
-
-      <input
-        value={formValues.author}
-        onChange={valueChangeHandler}
-        type="text"
-        placeholder="Book Author"
-        name="author"
-      />
-      <input
-        value={formValues.author}
-        onChange={valueChangeHandler}
-        type="text"
-        placeholder="Category"
-        name="category"
-      />
-      <button type="submit" className="butt">
-        Add Book
-      </button>
-    </form>
+    <div className="form-container">
+      <p className="form-container__title">Add new book</p>
+      <form onSubmit={addBookHandler} className="form">
+        <input
+          className="form__control"
+          value={formValues.title}
+          onChange={valueChangeHandler}
+          type="text"
+          placeholder="Title"
+          name="title"
+        />
+        <input
+          className="form__control"
+          value={formValues.author}
+          onChange={valueChangeHandler}
+          type="text"
+          placeholder="Author"
+          name="author"
+        />
+        <button className="form__control form__control--btn" type="submit">
+          Add Book
+        </button>
+      </form>
+    </div>
   );
 };
 
-export default Form;
+export default FormAdd;
