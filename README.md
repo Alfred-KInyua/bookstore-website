@@ -11,7 +11,7 @@ A web app that adds, stores and removes books from local storage. It is built wi
 
 ## Live Demo (if available)
 
-Comming soon
+No live demo
 
 ## Getting Started
 
