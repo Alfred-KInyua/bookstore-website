@@ -1,28 +1,31 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getbooks } from '../redux/books/books';
 
 import Book from '../components/Book';
 import Form from '../components/Form';
+import { fetchBook } from '../redux/books/books';
 
 const Books = () => {
   const dispatch = useDispatch();
   const books = useSelector((state) => state.books.books);
 
   useEffect(() => {
-    dispatch(getbooks());
+    dispatch(fetchBook());
   }, []);
 
   return (
     <>
-      {books.map((book) => (
-        <Book
-          key={book.item_id}
-          id={book.item_id}
-          title={book.title}
-          author={book.author}
-        />
-      ))}
+      <div className="books">
+        {books.map((book) => (
+          <Book
+            key={book.item_id}
+            id={book.item_id}
+            title={book.title}
+            author={book.author}
+            category={book.category}
+          />
+        ))}
+      </div>
       <Form />
     </>
   );

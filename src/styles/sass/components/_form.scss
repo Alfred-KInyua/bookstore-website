@@ -1,0 +1,40 @@
+.form-container {
+  padding-top: 2.9rem;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color-text-secondary;
+    margin-bottom: 1.9rem;
+  }
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 6fr 4fr 2fr;
+  gap: 3rem;
+
+  &__control {
+    padding: 1.3rem 1.7rem;
+    font-size: 1.6rem;
+    outline: none;
+    border: 1px solid $color-border;
+
+    &::placeholder {
+      font-family: $font-primary;
+      opacity: 0.5;
+    }
+
+    &--btn {
+      background: none;
+      border: none;
+      background-color: $color-blue;
+      border-radius: 3px;
+      text-transform: uppercase;
+      color: #fff;
+      font-family: $font-secondary;
+      font-size: 1.4rem;
+    }
+  }
+}
